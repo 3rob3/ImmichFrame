@@ -41,7 +41,8 @@ public class Settings
     public float WeatherLat => !string.IsNullOrWhiteSpace(WeatherLatLong) ? float.Parse(WeatherLatLong!.Split(',')[0]) : 0f;
     public float WeatherLong => !string.IsNullOrWhiteSpace(WeatherLatLong) ? float.Parse(WeatherLatLong!.Split(',')[1]) : 0f;
     public string Language { get; set; } = "en";
-    public static string XmlSettingsPath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Settings.xml");
+    //public static string XmlSettingsPath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Settings.xml");
+    public static string XmlSettingsPath = "Settings.xml";
     public static bool IsFromXmlFile => File.Exists(XmlSettingsPath);
 
     private static Settings? _settings;
@@ -106,8 +107,14 @@ public class Settings
             people.AddRange(this.People.Select(x => x.ToString()).ToArray());
         defaultSettings.People = people;
         defaultSettings.TransitionDuration = this.TransitionDuration;
-
-        defaultSettings.Save();
+        try
+        {
+            defaultSettings.Save();
+        }
+        catch (Exception ex)
+        {
+            throw new SettingsNotValidException($"Poopy Poop is Poopy: {ex.Message}", ex);
+        }
     }
 
     private void Validate()
