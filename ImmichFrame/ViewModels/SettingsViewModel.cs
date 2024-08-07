@@ -26,6 +26,10 @@ namespace ImmichFrame.ViewModels
         private ObservableCollection<ListItem> excludedAlbumList;
 
         [ObservableProperty]
+
+        private bool cancelVisible;
+
+        [ObservableProperty]
         public Settings settings;
         public ICommand SaveCommand { get; set; }
         public ICommand CancelCommand { get; set; }
@@ -41,7 +45,7 @@ namespace ImmichFrame.ViewModels
         public ICommand TestMarginCommand { get; set; }
         public List<string> StretchOptions { get; } = Enum.GetNames(typeof(Stretch)).ToList();
 
-        public SettingsViewModel()
+        public SettingsViewModel(bool cancleEnabled = true)
         {
             try
             {
@@ -68,6 +72,8 @@ namespace ImmichFrame.ViewModels
             PeopleList = new ObservableCollection<ListItem>(Settings.People.Select(x => new ListItem(x.ToString())));
             AlbumList = new ObservableCollection<ListItem>(Settings.Albums.Select(x => new ListItem(x.ToString())));
             ExcludedAlbumList = new ObservableCollection<ListItem>(Settings.ExcludedAlbums.Select(x => new ListItem(x.ToString())));
+
+            CancelVisible = cancleEnabled;
         }
 
         private void TestMarginAction()
