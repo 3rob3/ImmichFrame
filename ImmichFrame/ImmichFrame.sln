@@ -8,6 +8,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImmichFrame.Android", "..\I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImmichFrame.Desktop", "..\ImmichFrame.Desktop\ImmichFrame.Desktop.csproj", "{2245B7BA-C59F-4670-92DF-A750F65EBDEE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImmichFrame.Browser", "..\ImmichFrame.Browser\ImmichFrame.Browser.csproj", "{0E516801-83AE-4285-B20A-A17D4D7B1A47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2245B7BA-C59F-4670-92DF-A750F65EBDEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2245B7BA-C59F-4670-92DF-A750F65EBDEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2245B7BA-C59F-4670-92DF-A750F65EBDEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E516801-83AE-4285-B20A-A17D4D7B1A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E516801-83AE-4285-B20A-A17D4D7B1A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E516801-83AE-4285-B20A-A17D4D7B1A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E516801-83AE-4285-B20A-A17D4D7B1A47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
