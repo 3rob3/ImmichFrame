@@ -95,7 +95,7 @@ namespace ImmichFrame.Models
                 {
                     if (!File.Exists(JsonSettingsPath))
                     {
-                        CreateDefaultSettingsFile();
+                        return GetDefaultSettingsFile();
                     }
                     _settings = ParseFromJson();
                     _settings.Validate();
@@ -300,7 +300,7 @@ namespace ImmichFrame.Models
             _settings = settings;
             _settings!.Validate();
         }
-        private static void CreateDefaultSettingsFile()
+        private static Settings GetDefaultSettingsFile()
         {
             var defaultSettings = new Settings
             {
@@ -336,8 +336,7 @@ namespace ImmichFrame.Models
                 Language = "en",
                 UnattendedMode = false
             };
-            string json = JsonSerializer.Serialize(defaultSettings, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(JsonSettingsPath, json);
+            return defaultSettings;
         }
     }
 }

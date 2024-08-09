@@ -45,6 +45,7 @@
 	<DockPanel>
 		<UniformGrid DockPanel.Dock="Bottom" Columns="3">
 			<Button Content="Cancel"
+					IsVisible="{Binding CancelVisible}"
 					HorizontalAlignment="Stretch"
 					Command="{Binding CancelCommand}"
 					HorizontalContentAlignment="Center"
