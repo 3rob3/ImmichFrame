@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.0-rc1" />
+    <PackageReference Include="Avalonia.Controls.PanAndZoom" Version="11.1.0.1" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.0-rc1" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.0-rc1" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />

@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:ImmichFrame.ViewModels"
+             xmlns:paz="using:Avalonia.Controls.PanAndZoom"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
              x:Class="ImmichFrame.Views.MainView"
              x:DataType="vm:MainViewModel">
@@ -30,7 +31,14 @@
         <DataTemplate>
           <Grid>
             <Image Stretch="Fill" Source="{Binding ThumbhashImage}"  />
-            <Image Stretch="{Binding ImageStretch}" Source="{Binding Image}"  />
+            <paz:ZoomBorder x:Name="ZoomBorder"
+                            Stretch="None"
+                            ZoomSpeed="1.5"
+                            EnableConstrains="False"
+                            ClipToBounds="True" Focusable="True"
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Image x:Name="zoomImage" Stretch="None" Source="{Binding Image}"  />
+            </paz:ZoomBorder>
           </Grid>
         </DataTemplate>
       </TransitioningContentControl.ContentTemplate>
