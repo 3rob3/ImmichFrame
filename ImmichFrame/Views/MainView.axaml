@@ -31,13 +31,13 @@
         <DataTemplate>
           <Grid>
             <Image Stretch="Fill" Source="{Binding ThumbhashImage}"  />
-            <paz:ZoomBorder x:Name="ZoomBorder"
+            <paz:ZoomBorder x:Name="zoomBorder"
                             Stretch="None"
                             ZoomSpeed="1.5"
                             EnableConstrains="False"
                             ClipToBounds="True" Focusable="True"
-                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-            <Image x:Name="zoomImage" Stretch="None" Source="{Binding Image}"  />
+                            Loaded="ZoomBorder_Loaded">
+            <Image x:Name="zoomImage" Stretch="{Binding ImageStretch}" Source="{Binding Image}"  />
             </paz:ZoomBorder>
           </Grid>
         </DataTemplate>
