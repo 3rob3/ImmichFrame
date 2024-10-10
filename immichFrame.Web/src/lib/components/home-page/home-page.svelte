@@ -10,6 +10,7 @@
 	import ImageComponent from '../elements/image-component.svelte';
 	import { configStore } from '$lib/stores/config.store';
 	import ErrorElement from '../elements/error-element.svelte';
+	import Weather from '../elements/weather.svelte';
 
 	let imageData: Blob | null;
 	let assetData: api.AssetResponseDto | null;
@@ -95,6 +96,8 @@
 			{assetData}
 			{imageData}
 		/>
+
+		<Weather showWeather={true} />
 
 		<OverlayControls
 			on:next={async () => {
