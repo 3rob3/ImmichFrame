@@ -13,6 +13,10 @@
         public List<Guid> People { get; set; }
         public int RefreshAlbumPeopleInterval { get; set; }
         public string ImmichFrameAlbumName { get; set; }
+        public string? WeatherApiKey { get; set; }
+        public string? WeatherLatLong { get; set; }
+        public string? UnitSystem { get; set; }
+        public string Language { get; set; }
     }
 
     public interface IClientSettings
@@ -35,12 +39,8 @@
         public string? ImageLocationFormat { get; set; }
         public int ImageLocationFontSize { get; set; }
         public string FontColor { get; set; }
-        public string? WeatherApiKey { get; set; }
         public bool ShowWeatherDescription { get; set; }
         public int WeatherFontSize { get; set; }
-        public string? UnitSystem { get; set; }
-        public string? WeatherLatLong { get; set; }
-        public string Language { get; set; }
         public bool UnattendedMode { get; set; }
     }
 }
